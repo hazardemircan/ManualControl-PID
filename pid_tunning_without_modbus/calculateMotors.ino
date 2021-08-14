@@ -10,21 +10,35 @@ void calculateSpeed()
   int sagpwmYatay=(MAX_PWM-yatay_pwmX)+MIN_PWM; //geri
   
   
-  if(yukseklik_pwmY<1450 || yukseklik_pwmY>1550)
+//  if(yukseklik_pwmY<1450 || yukseklik_pwmY>1550)
+//  {
+//    y_onSol.writeMicroseconds(onsol);
+//    y_onSag.writeMicroseconds(onsagcontrol);
+//    y_arkaSol.writeMicroseconds(arkasolcontrol);
+//    y_arkaSag.writeMicroseconds(arkasagcontrol);
+//  }
+//  else if(yukseklik_pwmY<1550 && yukseklik_pwmY>1450)
+//  { 
+//    y_onSol.writeMicroseconds(DUR_PWM);
+//    y_onSag.writeMicroseconds(DUR_PWM);
+//    y_arkaSol.writeMicroseconds(DUR_PWM);
+//    y_arkaSag.writeMicroseconds(DUR_PWM);
+//    Serial.println("çalışmıyor");
+//  }
+int m_solmotoron=(MAX_PWM-yukseklik_pwmY)+MIN_PWM;
+
+  m_onSol.writeMicroseconds(m_solmotoron);
+  m_onSag.writeMicroseconds(yukseklik_pwmY);
+   m_arkaSol.writeMicroseconds(yukseklik_pwmY);
+  m_arkaSag.writeMicroseconds(yukseklik_pwmY);
+  if(yukseklik_pwmY<1550 && yukseklik_pwmY >1450)
   {
-    y_onSol.writeMicroseconds(onsol);
-    y_onSag.writeMicroseconds(onsagcontrol);
-    y_arkaSol.writeMicroseconds(arkasolcontrol);
-    y_arkaSag.writeMicroseconds(arkasagcontrol);
+      m_onSol.writeMicroseconds(DUR_PWM);
+  m_onSag.writeMicroseconds(DUR_PWM);
+   m_arkaSol.writeMicroseconds(DUR_PWM);
+  m_arkaSag.writeMicroseconds(DUR_PWM);
   }
-  else if(yukseklik_pwmY<1550 && yukseklik_pwmY>1450)
-  { 
-    y_onSol.writeMicroseconds(DUR_PWM);
-    y_onSag.writeMicroseconds(DUR_PWM);
-    y_arkaSol.writeMicroseconds(DUR_PWM);
-    y_arkaSag.writeMicroseconds(DUR_PWM);
-    Serial.println("çalışmıyor");
-  }
+
 
 //if(onsol<1550 && onsol>1450)
 //{

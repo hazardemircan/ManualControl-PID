@@ -30,6 +30,7 @@ int joypin=A6;
 int joydeger;
 
 
+
 //mpu için gerekli değişkenler mpu sekmesinde kullanılıyor
 double xAci1,yAci1,zAci1,x,x1,roll,y,y1,pitch,z,z1,z2;
 
